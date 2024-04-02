@@ -165,12 +165,38 @@ a {
 .card {
   background-color: #23232323;
   width: 150px;
+  height: 230px;
   border-radius: 0.5rem;
   padding: 1rem;
   margin-left: 1.5rem;
   margin-top: 1rem;
+  position: relative; /* Add this line to make .play relative to .card */
 }
 
+.card:hover {
+  background-color: #313030;
+}
+
+.card:hover .play {
+  opacity: 1;
+  top: 130px;
+}
+
+.play {
+  width: 30px;
+  height: 30px;
+  background-color: #28de6b;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  opacity: 0;
+  top: 150px;
+  right: 15px;
+  transition: all 0.5s ease;
+}
 .cardcontainer {
   display: flex;
   flex-wrap: wrap;
@@ -208,7 +234,7 @@ a {
   align-items: center;
 }
 .album {
-  width: 25%;
+  width: 35%;
 }
 
 .player {
@@ -272,3 +298,31 @@ a {
 .controllayer:hover {
   opacity: 1;
 }
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Webkit-based browsers */
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the scrollbar track */
+}
+
+/* Handle (thumb) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #888; /* color of the scrollbar thumb */
+  border-radius: 5px; /* rounded corners of the scrollbar thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color of the scrollbar thumb on hover */
+}
+
